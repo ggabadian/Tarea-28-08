@@ -8,6 +8,16 @@ object vonLukaz {
 	
 	method remera(){return remera}
 	method edad(){return edad}
+	
+	method disminuirEnergia(unaEnergia){
+		energia-=unaEnergia
+	}
+	method energia(unaEnergia){
+		energia=unaEnergia
+	}
+	method aumentarDiversion(unaDiversion){
+		diversion+=unaDiversion
+	}
 }
 
 object bianker {
@@ -18,6 +28,17 @@ object bianker {
 	
 	method remera(){return remera}
 	method edad(){return edad}
+	
+	method disminuirEnergia(unaEnergia){
+		energia-=unaEnergia
+	}
+	method energia(unaEnergia){
+		energia=unaEnergia
+	}
+	method aumentarDiversion(unaDiversion){
+		diversion+=unaDiversion
+	}
+	
 }
 
 object gonzen {
@@ -28,6 +49,16 @@ object gonzen {
 	
 	method remera(){return remera}
 	method edad(){return edad}
+	
+	method disminuirEnergia(unaEnergia){
+		energia-=unaEnergia
+	}
+	method energia(unaEnergia){
+		energia=unaEnergia
+	}
+	method aumentarDiversion(unaDiversion){
+		diversion+=unaDiversion
+	}
 }
 
 // patovas
@@ -50,6 +81,38 @@ object gushtavotruccensen {
 	}
 }
 
+// pistas
+
+object mainRoom {
+	var publico=#{vonLukaz,bianker}
+	
+	method bailar(unaPersona){
+		unaPersona.disminuirEnergia(40)
+		unaPersona.aumentarDiversion(30)
+	}
+}
+
+object panoramaBar {
+	var publico=#{gonzen}
+	
+	method bailar(unaPersona,unDJ){
+		if (unDJ=="Dixon"){
+			unaPersona.disminuirEnergia(60)
+			unaPersona.aumentarDiversion(120)
+		}
+		if (unDJ=="Marcel Dettmann"){
+			unaPersona.energia(0)
+			unaPersona.aumentarDiversion(1000)
+		}
+		if (unDJ=="Tommy Muñoz"){
+			unaPersona.disminuirEnergia(80)
+		}
+	}
+}
+
+object darkRoom {
+	
+}
 
 
 
